@@ -23,27 +23,25 @@
         <div class="col-3 d-flex align-items-center justify-content-center">
 
           <!--freccia sinistra-->
-          <i class="fas fa-angle-left fa-4x"></i>
+          <i @click='previusImage' class="fas fa-angle-left fa-4x"></i>
         </div>
         <div class="col-6">
           <div class="slider d-flex align-items-center">
 
             <!--galleria immagini-->
-            <img class="img-fluid" v-for='(image, index) in images' :src="getPic(index)" alt="" />
+            <img v-for='(image, index) in images' class="img-fluid" v-if='getCurrentIndex(index)'  :src="image" alt="" />
 
             <!--pallini al centro-->
             <div class="slider-dots">
-              <div class="dot mx-2 active"></div>
-              <div class="dot mx-2"></div>
-              <div class="dot mx-2"></div>
-              <div class="dot mx-2"></div>
+              <div v-for='(image, index) in images' class="dot mx-2" :class='{active:getCurrentIndex(index)}'></div>
+              
             </div>
           </div>
         </div>
         <div class="col-3 d-flex align-items-center justify-content-center">
 
           <!--freccia destra-->
-          <i class="fas fa-angle-right fa-4x"></i>
+          <i @click='nexImage' class="fas fa-angle-right fa-4x"></i>
         </div>
       </div>
     </div>
