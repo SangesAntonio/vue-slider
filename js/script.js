@@ -22,8 +22,14 @@ console.log('JS OK', Vue);
 const app = new Vue({
         el:'#root',
         data:{
-            
-        }
+            currentIndex: 0,
+            images: ['image', 'image2', 'image3', 'image4']
+        },
+        methods: {
+            getPic(index) {
+              return 'images/' + this.images[index] + '.jpg';
+            }
+          }
     
 });
 
