@@ -23,32 +23,33 @@ const app = new Vue({
         el:'#root',
         data:{
             currentIndex: 0,
+            dot: 0,
             images: ['images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg', 'images/image4.jpg']
         },
         methods: {
            
             getCurrentIndex(index){
                 return (this.currentIndex === index);
-                    
-                
             },
             nexImage(){
-                if(this.currentIndex === this.images.length - 1){
-
+                if(this.currentIndex == this.images.length - 1){
                     this.currentIndex = 0;
                 }else{
-
-                    this.currentIndex +=1;
+                    this.currentIndex += 1;
                 }
             },
             previusImage(){
-                if(this.currentIndex === 0){
-                    this.currentIndex === this.images.length - 1;
+                if(this.currentIndex == 0){
+                    this.currentIndex += this.images.length - 1;
                 }else{
-                    this.currentIndex -=1;
-
+                    this.currentIndex -= 1;
                 }
             },
+
+            dotClick(index){
+                return index === this.currentIndex;
+            }
+            
           }
     
 });

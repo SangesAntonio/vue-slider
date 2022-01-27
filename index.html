@@ -33,7 +33,7 @@
 
             <!--pallini al centro-->
             <div class="slider-dots">
-              <div v-for='(image, index) in images' class="dot mx-2" :class='{active:getCurrentIndex(index)}'></div>
+              <div v-for='(image, index) in images' @click='dotClick' class="dot mx-2" :class='{active:getCurrentIndex(index)}'></div>
               
             </div>
           </div>
