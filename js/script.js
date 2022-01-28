@@ -48,8 +48,15 @@ const app = new Vue({
                 this.currentIndex --;
             }
         },
+        imagePlay(){
+            setInterval(this.nexImage,3000);
+        }
         
+    },
+    created (){
+        this.imagePlay();
     }
+
     
 });
 
